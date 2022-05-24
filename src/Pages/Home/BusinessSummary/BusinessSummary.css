@@ -1,0 +1,11 @@
+.counter {
+    background-image: url("https://i.ibb.co/cCWfK7t/aerial-view-business-data-analysis-graph-min.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, .8);
+    background-blend-mode: overlay;
+}
+.counter svg{
+    color: #3366CC;
+}
