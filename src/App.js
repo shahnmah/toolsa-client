@@ -8,6 +8,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import NotFound from './Pages/NotFound/NotFound';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
+import BuyNow from './Pages/Home/Home/BuyNow/BuyNow';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='/buyNow/:toolId' element={<BuyNow/>}></Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       <Footer/>
