@@ -14,7 +14,7 @@ const Login = () => {
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder='Password'/> 
                         <span className='text-muted' role='button'><small>Forgot Password?</small></span>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Login</button>
                     <small><Link to='/register' className='text-muted text-decoration-none'>Don't have an account?</Link></small>
                     <hr />
                     <button class="btn btn-primary w-100">Google Login</button>
