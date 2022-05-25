@@ -1,0 +1,20 @@
+[
+    {
+        "name": "David Anderson",
+        "customer_review" : "Needless to say we are extremely satisfied with the products. Toolsa tools helped us a lot . It's really wonderful",
+        "rating" : 5,
+        "img": "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
+    },
+    {
+        "name": "Jason Baker",
+        "customer_review" : "If you aren't sure, always go for toolsa. No matter what world you do, telsa tools is the coolest, most happening thing around! You won't regret it.",
+        "rating" : 4.5,
+        "img": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    },
+    {
+        "name": "Ryan Walker",
+        "customer_review" : "We've used the toolsa tools for the last 6 months. I'm good to go. I have gotten at least 50 times the value from toolsa tool. Toolsa is the real deal!",
+        "rating" : 5,
+        "img": "https://images.pexels.com/photos/4183527/pexels-photo-4183527.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+    }
+]

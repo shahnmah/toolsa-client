@@ -1,0 +1,26 @@
+[
+    {
+        "name":"Claw Hammer",
+        "img":"https://i.ibb.co/P19LCTK/hammer-PNG1124-removebg-preview.png",
+        "dis":"This Toolsa claw hammer is made of drop-forged carbon steel with fiberglass handle and has a rubberized black grip for better grip.",
+        "min_order":100,
+        "available":500,
+        "price":20
+    },
+    {
+        "name":"Blow Hammer:",
+        "img":"https://i.ibb.co/s2G8BTb/hammer-PNG1128-removebg-preview.png",
+        "dis":"Blow Hammer feature a square beveled face and angular cross peen.The distance between the face and the center of the eye make this one a greater starter hammer.",
+        "min_order":100,
+        "available":500,
+        "price":30
+    },
+    {
+        "name":"Rip Hammer",
+        "img":"https://i.ibb.co/yp08njg/hammer-PNG1127-removebg-preview.png",
+        "dis":"ProTouch grip for maximum comfort even after prolonged use.Smooth face leaves fewer marks on surfaces.Forged steel head for superior durability.",
+        "min_order":100,
+        "available":500,
+        "price":15
+    }
+]
