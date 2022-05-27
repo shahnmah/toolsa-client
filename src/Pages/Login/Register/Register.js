@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useSignInWithMicrosoft, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
+
+
+
 
 
 
@@ -10,14 +13,17 @@ const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage, setErrorMessage] = useState('')
     const [createUserWithEmailAndPassword,user,loading,error] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [updateProfile] = useUpdateProfile(auth);
+
     const navigate = useNavigate()
-    const handleRegister = e => {
-        e.preventDefault();
-        createUserWithEmailAndPassword(email, password)
+    const handleRegister = async event => {
+        event.preventDefault();
+        await createUserWithEmailAndPassword(email, password)
+        await updateProfile({ displayName: name })
     }
+    let errorElement;
     if (user) {
         navigate('/login')
     }
@@ -25,7 +31,9 @@ const Register = () => {
         navigate('/home')
     }
     if(error || googleError){
-        setErrorMessage(error?.message || googleError?.message)
+        errorElement = <div>
+        <p className='text-danger'>Error: {error?.message} {googleError?.message}</p>
+    </div>
     }
     if(loading || googleLoading){
         return <Loading/>
@@ -48,7 +56,7 @@ const Register = () => {
                     <small><Link to='/login' className='text-muted text-decoration-none'>Already have an account?</Link></small>
                     <hr />
                     <button onClick={()=> signInWithGoogle()} class="btn btn-primary w-100">Google Sign Up</button>
-                    <p>{errorMessage}</p>
+                    <p>{errorElement}</p>
                 </form>
             </div>
         </div>

@@ -15,7 +15,6 @@ const BuyNow = () => {
             .then(res => res.json())
             .then(data => setTool(data))
     }, [])
-    console.log(user)
     return (
         <div>
             <div className="container">
@@ -37,10 +36,10 @@ const BuyNow = () => {
                     <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                             <Form className='w-75 mx-auto'>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                                    <Form.Control type="text" placeholder={user?.displayName} />
+                                    <Form.Control type="text" placeholder={user?.displayName}/>
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                                    <Form.Control type="email" placeholder={user?.email} disabled />
+                                    <Form.Control type="email" value={user?.email} disabled />
                                 </Form.Group>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Control type="text" placeholder="Address" required/>

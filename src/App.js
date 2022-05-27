@@ -9,6 +9,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import BuyNow from './Pages/Home/Home/BuyNow/BuyNow';
+import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -17,10 +18,12 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/buyNow/:toolId' element={<BuyNow/>}></Route>
+        <Route path='home' element={<Home/>}/>
+        <Route path='login' element={<Login/>}/>
+        <Route path='register' element={<Register/>}/>
+        <Route path='buyNow/:toolId' element={<RequireAuth>
+          <BuyNow></BuyNow>
+        </RequireAuth>}></Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       <Footer/>

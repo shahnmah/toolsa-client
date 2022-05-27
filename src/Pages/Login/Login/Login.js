@@ -1,29 +1,35 @@
 import React, { useState } from 'react';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from '../../Shared/Loading/Loading';
 
 
+
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [
-        signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
-    const [sendPasswordResetEmail, sending, resetError] = useSendPasswordResetEmail(auth);
-    const [errorMessage, setErrorMessage] = useState('')
-    const navigate = useNavigate()
-    let errorElement;
+    const [sendPasswordResetEmail, resetError] = useSendPasswordResetEmail(auth);
 
+    let errorElement;
+    const  navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    // login using email password
     const handleLogin = event => {
         event.preventDefault();
-        
-        // const email = event.target.email.value;
         signInWithEmailAndPassword(email, password)
     }
+    if(user || googleUser){
+        navigate(from, { replace: true });
+    }
+
+    // forgot password
     const handleForgotPassword = async () => {
         if (email) {
             await sendPasswordResetEmail(email);
@@ -33,6 +39,8 @@ const Login = () => {
             toast.error('Please inter your email first');
         }
     }
+
+
     if(loading || googleLoading){
         return <Loading/>
     }
@@ -40,9 +48,6 @@ const Login = () => {
         errorElement = <div>
             <p className='text-danger'>Error: {error?.message} {googleError?.message}</p>
         </div>
-    }
-    if(user || googleUser){
-        navigate('/')
     }
     return (
         <div className='register my-5'>
