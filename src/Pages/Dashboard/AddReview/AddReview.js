@@ -8,6 +8,7 @@ const AddReview = () => {
     const [img, setImg] = useState('');
     const [customer_review, SetCustomer_review] = useState('')
     const [rating, setRating] = useState('')
+    
     const clearInput = () =>{
         setName('');
         setImg('');

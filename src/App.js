@@ -13,6 +13,7 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
 import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path='addReview' element={<AddReview/>}/>
           <Route path='myOrder' element={<MyOrders/>}/>
         </Route>
+        <Route path='portfolio' element={<MyPortfolio/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       <Footer/>
