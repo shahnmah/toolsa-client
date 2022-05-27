@@ -12,6 +12,7 @@ import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import AddReview from './Pages/Dashboard/AddReview/AddReview';
 import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
+import MyProfile from './Pages/Dashboard/MyProfile/MyProfile';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <BuyNow></BuyNow>
         </RequireAuth>}></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
+          <Route index path='myProfile' element={<MyProfile/>}/>
           <Route path='addReview' element={<AddReview/>}/>
           <Route path='myOrder' element={<MyOrders/>}/>
         </Route>
