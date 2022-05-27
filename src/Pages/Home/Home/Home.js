@@ -3,6 +3,7 @@ import About from '../About/About';
 import Banner from '../Banner/Banner';
 import BusinessSummary from '../BusinessSummary/BusinessSummary';
 import Location from '../Location/Location';
+import Reviews from '../Reviews/Reviews';
 import Tools from '../Tools/Tools/Tools';
 
 const Home = () => {
@@ -13,6 +14,7 @@ const Home = () => {
             <Tools/>
             <BusinessSummary/>
             <Location/>
+            <Reviews/>
         </div>
     );
 };

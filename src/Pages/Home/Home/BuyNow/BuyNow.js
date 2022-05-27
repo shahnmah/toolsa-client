@@ -18,7 +18,7 @@ const BuyNow = () => {
     return (
         <div>
             <div className="container">
-                <div className="row my-5">
+                <div className="row my-5 gx-5">
                     <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                         <div className="row shadow p-5">
                             <div className="col-lg-6">
@@ -33,7 +33,7 @@ const BuyNow = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div className="col-lg-6 col-md-6 col-sm-12 col-12 shadow">
                             <Form className='w-75 mx-auto'>
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Control type="text" placeholder={user?.displayName}/>

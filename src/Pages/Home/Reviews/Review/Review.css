@@ -1,0 +1,17 @@
+.review{
+    position: relative;
+    margin-top: 150px;
+}
+.review-img-container{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: -55px;
+    right: 37%;
+}
+.review-img-container img{
+    width: 100px;
+    height: 100px;
+}
