@@ -10,7 +10,7 @@ const Review = ({review}) => {
             </div>
             <p className='mt-5'>{rating} Star</p>
             <h4>{name}</h4>
-            <div className='bg-light p-1'>
+            <div className='bg-light p-2'>
                 <p>{customer_review}</p>
             </div>
         </div>

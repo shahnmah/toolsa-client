@@ -54,18 +54,18 @@ const Login = () => {
         <div className="container">
             <form className='w-25 mx-auto' onSubmit={handleLogin}>
                 <h2 className='fw-bold my-3'><i>Login</i></h2>
-                <div class="mb-3">
-                    <input required type="email" onBlur={(e)=> setEmail(e.target.value)} name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email'/>
+                <div className="mb-3">
+                    <input required type="email" onBlur={(e)=> setEmail(e.target.value)} name='email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email'/>
                 </div>
                 <div>
-                    <input required type="password" onBlur={(e)=> setPassword(e.target.value)} name='password' class="form-control" id="exampleInputPassword1" placeholder='Password'/> 
+                    <input required type="password" onBlur={(e)=> setPassword(e.target.value)} name='password' className="form-control" id="exampleInputPassword1" placeholder='Password'/> 
                     <span className='text-muted' role='button'><small onClick={()=> handleForgotPassword()}>Forgot Password?</small></span>
                 </div>
                 {errorElement}
-                <button class="btn btn-primary w-100 mt-3">Login</button>
+                <button className="btn btn-primary w-100 mt-3">Login</button>
                 <small><Link to='/register' role='button' className='text-muted text-decoration-none'>Don't have an account?</Link></small>
                 <hr />
-                <button onClick={()=> signInWithGoogle()} class="btn btn-primary w-100">Google Login</button>
+                <button onClick={()=> signInWithGoogle()} className="btn btn-primary w-100">Google Login</button>
             </form>
             <ToastContainer/>
         </div>

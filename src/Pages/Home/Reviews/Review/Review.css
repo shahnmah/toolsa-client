@@ -10,6 +10,7 @@
     position: absolute;
     top: -55px;
     right: 37%;
+    border: 2px solid #3366cc;
 }
 .review-img-container img{
     width: 100px;

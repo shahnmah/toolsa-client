@@ -43,19 +43,19 @@ const Register = () => {
             <div className="container">
                 <form className='w-25 mx-auto' onSubmit={handleRegister}>
                     <h2 className='fw-bold my-3'><i>Register</i></h2>
-                    <div class="mb-3">
-                        <input required type="text" onBlur={(e)=> setName(e.target.value)} name='name' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Name'/>
+                    <div className="mb-3">
+                        <input required type="text" onBlur={(e)=> setName(e.target.value)} name='name' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Name'/>
                     </div>
-                    <div class="mb-3">
-                        <input required type="email" onBlur={(e)=> setEmail(e.target.value)} name='email' class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email'/>
+                    <div className="mb-3">
+                        <input required type="email" onBlur={(e)=> setEmail(e.target.value)} name='email' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder='Email'/>
                     </div>
                     <div>
-                        <input required type="password" onBlur={(e)=> setPassword(e.target.value)} name='password' class="form-control" id="exampleInputPassword1" placeholder='Password'/> 
+                        <input required type="password" onBlur={(e)=> setPassword(e.target.value)} name='password' className="form-control" id="exampleInputPassword1" placeholder='Password'/> 
                     </div>
-                    <button type="submit" class="btn btn-primary w-100 mt-3">Register</button>
+                    <button type="submit" className="btn btn-primary w-100 mt-3">Register</button>
                     <small><Link to='/login' className='text-muted text-decoration-none'>Already have an account?</Link></small>
                     <hr />
-                    <button onClick={()=> signInWithGoogle()} class="btn btn-primary w-100">Google Sign Up</button>
+                    <button onClick={()=> signInWithGoogle()} className="btn btn-primary w-100">Google Sign Up</button>
                     <p>{errorElement}</p>
                 </form>
             </div>

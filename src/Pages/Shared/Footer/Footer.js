@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => {
     return (
-        <div class="mt-5 py-5 bg-light">
+        <div className="mt-5 py-5 bg-light">
             <footer>
                 <div className="container">
                     <div className="row">
