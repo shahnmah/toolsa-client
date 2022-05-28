@@ -51,7 +51,6 @@ const MyOrders = () => {
                             <td>{purchaseItem._id}</td>
                             <td><button className='btn btn-success btn-sm'>Pay Now</button></td>
                             <td><button onClick={() => handleCancel(purchaseItem._id)} className='btn btn-danger btn-sm'>CANCEL</button></td>
-
                         </tr>)
                     }
                     {/* <Modal show={show} onHide={handleClose}>

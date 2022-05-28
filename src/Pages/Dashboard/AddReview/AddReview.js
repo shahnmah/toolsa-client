@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Form, Placeholder } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 

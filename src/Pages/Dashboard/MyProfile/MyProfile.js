@@ -5,8 +5,11 @@ import auth from '../../../firebase.init';
 const MyProfile = () => {
     const [user] = useAuthState(auth);
     return (
-        <div>
-            <h4>{user?.displayName}</h4>
+        <div className='ms-5'>
+            <div>
+                <h5>Name: {user?.displayName}</h5>
+                <h5>Email: {user.email}</h5>
+            </div>
         </div>
     );
 };
