@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { ToastContainer } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddProduct = () => {
     const [name, setName] = useState('');
@@ -11,20 +11,34 @@ const AddProduct = () => {
     const [dis, setDis] = useState(''); 
     
 
-    const product = {
-        name, 
-        img, 
-        dis, 
-        min_order,
-        available,
-        price
+    const clearInput = () =>{
+        setName('');
+        setImg('');
+        setMin_order('');
+        setAvailable('');
+        setPrice('');
+        setDis('');
     }
 
     const handleProductAdd = (event) =>{
         event.preventDefault();
         if(name && img && dis && min_order && available && price){
-            
+            fetch('http://localhost:5000/addproduct',{
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                  },
+                  body: JSON.stringify({name, img, dis, min_order, available, price})
+            })
+           .then(res => res.json())
+          toast.success("Product Added Successfully")
         }
+        else{
+            toast.error("Please Full Fill All Field")
+            event.target.reset();
+        }
+        event.target.reset();
+        clearInput()
     }
 
     return (
