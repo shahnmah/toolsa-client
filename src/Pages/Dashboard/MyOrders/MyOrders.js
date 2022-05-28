@@ -48,7 +48,7 @@ const MyOrders = () => {
                         purchaseItems.map((purchaseItem, index) => <tr key={purchaseItem._id}>
                             <td>{index + 1}</td>
                             <td>{purchaseItem.itemName}</td>
-                            <td>{purchaseItem._id}</td>
+                            <td>{purchaseItem.amount}</td>
                             <td><button className='btn btn-success btn-sm'>Pay Now</button></td>
                             <td><button onClick={() => handleCancel(purchaseItem._id)} className='btn btn-danger btn-sm'>CANCEL</button></td>
                         </tr>)

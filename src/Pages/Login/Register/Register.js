@@ -25,7 +25,7 @@ const Register = () => {
         await updateProfile({ displayName: name })
     }
     // token
-    // const [token] = useToken(user || googleUser);
+    const [token] = useToken(user || googleUser);
     let errorElement;
     if (user) {
         navigate('/login')
