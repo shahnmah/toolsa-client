@@ -23,6 +23,7 @@ const BuyNow = () => {
             .then(data => setTool(data))
     }, [])
     const amount = quantity * tool.price; 
+    const itemName = tool.name;
     const purchase = {
         name,
         email,
@@ -30,6 +31,7 @@ const BuyNow = () => {
         number,
         quantity,
         amount,
+        itemName
     }
 
     // update availableItem after purchase 

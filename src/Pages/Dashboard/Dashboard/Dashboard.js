@@ -18,7 +18,7 @@ const Dashboard = () => {
 
 
                     </div>
-                    <div className="tab-content" id="v-pills-tabContent">
+                    <div className="tab-content" id="v-pills-tabContent" style={{width: '80%'}}>
                         {/* <div className="tab-pane fade show active" id="review"></div> */}
                         <Outlet />
                     </div>
