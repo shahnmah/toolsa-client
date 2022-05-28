@@ -15,7 +15,7 @@ const BuyNow = () => {
     const [address, setAddress] = useState('')
     const [number, setNumber] = useState('')
     const [quantity, setQuantity] = useState(100)
-    const [availableItem, setAvailableItem] = useState(0)
+    const [availableItem, setAvailableItem] = useState(500)
     const email = user.email;
     useEffect(() => {
         fetch(`http://localhost:5000/buyNow/${toolId}`)
@@ -53,13 +53,6 @@ const BuyNow = () => {
 
     const handleBuy = event => {
         event.preventDefault();
-        if (quantity < 100) {
-            toast.error('sorry you cannot order less than 100')
-        }
-        setAvailableItem(tool.available)
-        if (quantity > availableItem) {
-            toast.error(`Sorry, you can not buy more than ${tool.available}`)
-        }
         if ((quantity <= availableItem) && (quantity >= 100)) {
             fetch('http://localhost:5000/purchase', {
                 method: 'POST',
@@ -71,17 +64,22 @@ const BuyNow = () => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
-                        toast('Item added to your purchase list, now pay to confirm')
+                        toast.success('Item added to your purchase list, now pay to confirm')
                     }
                 })
             // handleUpdateQuantity()
         }
-        else {
-            toast.error('you cannot buy more than available or less than 100')
+        if (quantity < 100) {
+            toast.error('sorry you cannot order less than 100')
         }
-        event.target.value = '';
-        // clearInput()
-        console.log(amount)
+        setAvailableItem(tool.available)
+        if (quantity > availableItem) {
+            toast.error(`Sorry, you can not buy more than ${tool.available}`)
+        }
+        // else {
+        //     toast.error('you cannot buy more than available or less than 100')
+        // }
+        event.target.reset();
     }
 
 

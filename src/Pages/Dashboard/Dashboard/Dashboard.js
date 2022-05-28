@@ -16,6 +16,7 @@ const Dashboard = () => {
                         <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/addReview'>Add A Review</Link>
                         <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/myOrder'>My Orders</Link>
                         <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/addProduct'>Add A Product</Link>
+                        <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/makeAdmin'>Make Admin</Link>
 
 
                     </div>
