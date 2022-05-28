@@ -15,33 +15,50 @@ const BuyNow = () => {
     const [address, setAddress] = useState('')
     const [number, setNumber] = useState('')
     const [quantity, setQuantity] = useState(100)
-    const [available, setAvailable] = useState(500)
+    const [availableItem, setAvailableItem] = useState(0)
     const email = user.email;
     useEffect(() => {
         fetch(`http://localhost:5000/buyNow/${toolId}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [])
+    const amount = quantity * tool.price; 
     const purchase = {
         name,
         email,
         address,
         number,
         quantity,
-        available,
+        amount,
     }
+
+    // update availableItem after purchase 
+    const handleUpdateQuantity = () => {
+        const currentAvailable = (availableItem - quantity)
+        const available = {currentAvailable}
+        console.log(available)
+        fetch(`http://localhost:5000/buyNow/${toolId}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(available)
+        })
+            .then(res=> res.json())
+            .then((json) => console.log(json));
+    }
+
+
     const handleBuy = event => {
         event.preventDefault();
-        console.log(name, email, address, number, quantity)
-
         if (quantity < 100) {
             toast.error('sorry you cannot order less than 100')
         }
-        setAvailable(tool.available)
-        if (quantity > available) {
+        setAvailableItem(tool.available)
+        if (quantity > availableItem) {
             toast.error(`Sorry, you can not buy more than ${tool.available}`)
         }
-        if ((quantity <= available) && ( quantity >= 100)) {
+        if ((quantity <= availableItem) && (quantity >= 100)) {
             fetch('http://localhost:5000/purchase', {
                 method: 'POST',
                 headers: {
@@ -49,19 +66,20 @@ const BuyNow = () => {
                 },
                 body: JSON.stringify(purchase)
             })
-            .then(res => res.json())
-            .then(data => {
-                if(data.insertedId){
-                    toast('Item added to your purchase list, now pay to confirm')
-                }
-            })
-            
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        toast('Item added to your purchase list, now pay to confirm')
+                    }
+                })
+            // handleUpdateQuantity()
         }
         else {
             toast.error('you cannot buy more than available or less than 100')
         }
         event.target.value = '';
         // clearInput()
+        console.log(amount)
     }
 
 
