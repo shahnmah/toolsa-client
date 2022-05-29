@@ -12,7 +12,7 @@ const Dashboard = () => {
 
     const email = user.email;
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${email}`, {
+        fetch(`https://mysterious-anchorage-92670.herokuapp.com/users/${email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

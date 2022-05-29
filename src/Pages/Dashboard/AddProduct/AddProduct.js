@@ -23,7 +23,7 @@ const AddProduct = () => {
     const handleProductAdd = (event) =>{
         event.preventDefault();
         if(name && img && dis && min_order && available && price){
-            fetch('http://localhost:5000/addproduct',{
+            fetch('https://mysterious-anchorage-92670.herokuapp.com/addproduct',{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',

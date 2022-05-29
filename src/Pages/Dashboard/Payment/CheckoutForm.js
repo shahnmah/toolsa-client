@@ -11,7 +11,7 @@ const CheckoutForm = ({ purchaseItems }) => {
     const elements = useElements();
     const { _id,amount, name, email } = purchaseItems;
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://mysterious-anchorage-92670.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -74,7 +74,7 @@ const CheckoutForm = ({ purchaseItems }) => {
             const payment ={
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:5000/purchase/${_id}`,{
+            fetch(`https://mysterious-anchorage-92670.herokuapp.com/purchase/${_id}`,{
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

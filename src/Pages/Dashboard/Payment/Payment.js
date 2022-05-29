@@ -14,7 +14,7 @@ const Payment = () => {
 
     const { id } = useParams();
 
-    const { data: purchaseItems, isLoading } = useQuery('purchases', () => fetch(`http://localhost:5000/purchase/${id}`).then(res => res.json()))
+    const { data: purchaseItems, isLoading } = useQuery('purchases', () => fetch(`https://mysterious-anchorage-92670.herokuapp.com/purchase/${id}`).then(res => res.json()))
     if (isLoading) {
         return <Loading />
     }

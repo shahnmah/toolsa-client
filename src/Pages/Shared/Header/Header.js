@@ -22,23 +22,20 @@ const Header = () => {
                                 <Link to='/' className="nav-link active fw-bold" aria-current="page">Home</Link>
                             </li>
                             <li className="nav-item">
-                            <Link to='/' className="nav-link active fw-bold">About</Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link to='/' className="nav-link active fw-bold">Product</Link>
-                            </li>
-                            <li className="nav-item">
-                            <Link to='/portfolio' className="nav-link active fw-bold">My Portfolio</Link>
+                                <Link to='/portfolio' className="nav-link active fw-bold">My Portfolio</Link>
                             </li>
                             {
                                 user && <Link to='/dashboard' className="nav-link active fw-bold">Dashboard</Link>
                             }
                             <li className="nav-item">
-                            {
-                                user ? <button style={{backgroundColor:'#3366cc'}} className='btn btn-link text-white text-decoration-none' onClick={()=>signOut(auth)}>Sign Out</button>
-                                : 
-                                <Link to='/login' className="nav-link active fw-bold">Login</Link>
-                            }
+                                <Link to='/blogs' className="nav-link active fw-bold">Blogs</Link>
+                            </li>
+                            <li className="nav-item">
+                                {
+                                    user ? <button style={{ backgroundColor: '#3366cc' }} className='btn btn-link text-white text-decoration-none' onClick={() => signOut(auth)}>Sign Out</button>
+                                        :
+                                        <Link to='/login' className="nav-link active fw-bold">Login</Link>
+                                }
                             </li>
                         </ul>
                     </div>

@@ -5,7 +5,7 @@ const Users = ({ user, refetch, index}) => {
     const {email, role} = user
 
     const makeAdmin = () =>{
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://mysterious-anchorage-92670.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
         })
         .then(res => res.json())

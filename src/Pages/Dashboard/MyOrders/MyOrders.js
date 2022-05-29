@@ -7,7 +7,7 @@ import Loading from '../../Shared/Loading/Loading';
 import { useQuery } from 'react-query';
 const MyOrders = () => {
     const [user] = useAuthState(auth);
-    const {data: purchaseItems, isLoading, refetch} = useQuery(['purchaseItems', user.email], ()=> fetch(`http://localhost:5000/purchase?email=${user.email}`).then(res => res.json()))
+    const {data: purchaseItems, isLoading, refetch} = useQuery(['purchaseItems', user.email], ()=> fetch(`https://mysterious-anchorage-92670.herokuapp.com/purchase?email=${user.email}`).then(res => res.json()))
     if(isLoading){
         return <Loading/>
     }

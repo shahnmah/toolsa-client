@@ -19,7 +19,7 @@ const AddReview = () => {
         event.preventDefault();
 
         if(name && img && customer_review && rating){
-            fetch('http://localhost:5000/addreview',{
+            fetch('https://mysterious-anchorage-92670.herokuapp.com/addreview',{
                 method: 'POST',
                 headers: {
                     'Content-type': 'application/json',

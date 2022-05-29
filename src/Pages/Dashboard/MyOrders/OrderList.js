@@ -10,7 +10,7 @@ const OrderList = ({ purchaseItem, refetch, index }) => {
     const handleShow = () => setShow(true);
 
     const handleCancel = id => {
-        fetch(`http://localhost:5000/purchase/${id}`, {
+        fetch(`https://mysterious-anchorage-92670.herokuapp.com/purchase/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

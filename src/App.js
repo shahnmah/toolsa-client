@@ -19,34 +19,36 @@ import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
 import ManageAllOrders from './Pages/Dashboard/ManageAllOrders/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import Payment from './Pages/Dashboard/Payment/Payment';
+import Blogs from './Pages/Blogs/Blogs';
 
 
 function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='home' element={<Home/>}/>
-        <Route path='login' element={<Login/>}/>
-        <Route path='register' element={<Register/>}/>
+        <Route path='/' element={<Home />} />
+        <Route path='home' element={<Home />} />
+        <Route path='login' element={<Login />} />
+        <Route path='register' element={<Register />} />
         <Route path='buyNow/:toolId' element={<RequireAuth>
           <BuyNow></BuyNow>
         </RequireAuth>}></Route>
-        <Route path='dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
-          <Route index path='myProfile' element={<MyProfile/>}/>
-          <Route path='addReview' element={<AddReview/>}/>
-          <Route path='myOrder' element={<MyOrders/>}/>
-          <Route path='addProduct' element={<AddProduct/>}/>
-          <Route path='makeAdmin' element={<MakeAdmin/>}/>
-          <Route path='manageAllOrders' element={<ManageAllOrders/>}/>
-          <Route path='manageProducts' element={<ManageProducts/>}/>
-          <Route path='payment/:id' element={<Payment/>}/>
+        <Route path='dashboard' element={<RequireAuth><Dashboard /></RequireAuth>}>
+          <Route index path='myProfile' element={<MyProfile />} />
+          <Route path='addReview' element={<AddReview />} />
+          <Route path='myOrder' element={<MyOrders />} />
+          <Route path='addProduct' element={<AddProduct />} />
+          <Route path='makeAdmin' element={<MakeAdmin />} />
+          <Route path='manageAllOrders' element={<ManageAllOrders />} />
+          <Route path='manageProducts' element={<ManageProducts />} />
+          <Route path='payment/:id' element={<Payment />} />
         </Route>
-        <Route path='portfolio' element={<MyPortfolio/>}/>
-        <Route path='*' element={<NotFound/>}/>
+        <Route path='portfolio' element={<MyPortfolio />} />
+        <Route path='blogs' element={<Blogs />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

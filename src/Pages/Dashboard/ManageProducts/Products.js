@@ -10,7 +10,7 @@ const Products = ({tool, refetch, index}) => {
 
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/tools/${id}`, {
+        fetch(`https://mysterious-anchorage-92670.herokuapp.com/tools/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

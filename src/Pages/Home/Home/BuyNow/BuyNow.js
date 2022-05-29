@@ -18,7 +18,7 @@ const BuyNow = () => {
     const [availableItem, setAvailableItem] = useState(500)
     const email = user.email;
     useEffect(() => {
-        fetch(`http://localhost:5000/buyNow/${toolId}`)
+        fetch(`https://mysterious-anchorage-92670.herokuapp.com/buyNow/${toolId}`)
             .then(res => res.json())
             .then(data => setTool(data))
     }, [])
@@ -35,26 +35,26 @@ const BuyNow = () => {
     }
 
     // update availableItem after purchase 
-    const handleUpdateQuantity = () => {
-        const currentAvailable = (availableItem - quantity)
-        const available = {currentAvailable}
-        console.log(available)
-        fetch(`http://localhost:5000/buyNow/${toolId}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify(available)
-        })
-            .then(res=> res.json())
-            .then((json) => console.log(json));
-    }
+    // const handleUpdateQuantity = () => {
+    //     const currentAvailable = (availableItem - quantity)
+    //     const available = {currentAvailable}
+    //     console.log(available)
+    //     fetch(`https://mysterious-anchorage-92670.herokuapp.com/buyNow/${toolId}`, {
+    //         method: 'PATCH',
+    //         headers: {
+    //             'content-type': 'application/json',
+    //         },
+    //         body: JSON.stringify(available)
+    //     })
+    //         .then(res=> res.json())
+    //         .then((json) => console.log(json));
+    // }
 
 
     const handleBuy = event => {
         event.preventDefault();
         if ((quantity <= availableItem) && (quantity >= 100)) {
-            fetch('http://localhost:5000/purchase', {
+            fetch('https://mysterious-anchorage-92670.herokuapp.com/purchase', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

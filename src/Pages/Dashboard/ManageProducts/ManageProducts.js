@@ -5,7 +5,7 @@ import Loading from '../../Shared/Loading/Loading';
 import Products from './Products';
 
 const ManageProducts = () => {
-    const {data: tools, isLoading, refetch} = useQuery('tools', ()=> fetch('http://localhost:5000/tools').then(res => res.json()))
+    const {data: tools, isLoading, refetch} = useQuery('tools', ()=> fetch('https://mysterious-anchorage-92670.herokuapp.com/tools').then(res => res.json()))
     if(isLoading){
         return <Loading/>
     }

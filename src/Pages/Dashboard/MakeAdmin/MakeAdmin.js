@@ -5,7 +5,7 @@ import Loading from '../../Shared/Loading/Loading';
 import Users from './Users';
 
 const MakeAdmin = () => {
-    const {data: users, isLoading, refetch} = useQuery('users', ()=> fetch('http://localhost:5000/user').then(res => res.json()))
+    const {data: users, isLoading, refetch} = useQuery('users', ()=> fetch('https://mysterious-anchorage-92670.herokuapp.com/user').then(res => res.json()))
     if(isLoading){
         return <Loading/>
     }
