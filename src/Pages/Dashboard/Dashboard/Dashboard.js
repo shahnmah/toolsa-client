@@ -7,7 +7,7 @@ import useAdmin from '../../../hooks/useAdmin';
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
-    const [admin] = useAdmin(user)
+    // const [admin] = useAdmin(user)
     const [currentUser, setCurrentUser] = useState([])
 
     const email = user.email;
