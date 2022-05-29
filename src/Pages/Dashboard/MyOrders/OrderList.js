@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 const OrderList = ({ purchaseItem, refetch, index }) => {
-    const { itemName, amount, _id} = purchaseItem
+    const { paid ,itemName, amount, _id} = purchaseItem
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);

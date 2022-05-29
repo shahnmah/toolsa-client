@@ -8,7 +8,7 @@ const CheckoutForm = ({ purchaseItems }) => {
     const [clientSecret, setClientSecret] = useState("");
     const stripe = useStripe();
     const elements = useElements();
-    const { amount, name, email } = purchaseItems;
+    const { _id,amount, name, email } = purchaseItems;
     useEffect(() => {
         fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
@@ -69,6 +69,20 @@ const CheckoutForm = ({ purchaseItems }) => {
             console.log(paymentIntent)
             setSuccess('Your payment is completed')
             setTransactionId(paymentIntent.id)
+
+            // update payment info database 
+            const payment ={
+                transactionId: paymentIntent.id
+            }
+            fetch(`http://localhost:5000/purchase/${_id}`,{
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify({ payment })
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))
         }
     }
     return (
