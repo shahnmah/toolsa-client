@@ -1,10 +1,17 @@
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
 import Loading from '../../Shared/Loading/Loading';
+import CheckoutForm from './CheckoutForm';
+
+
+const stripePromise = loadStripe('pk_test_51L2lTBEZw3bdVn9Vs8mFQmAVg2Wq2Woljk1yfVoJkvklQHHcxyDk46AMWyZvDbyeMctan39UMo4MdcE5zJXKjJ1g00WX8rAmln');
 
 const Payment = () => {
+
     const { id } = useParams();
 
     const { data: purchaseItems, isLoading } = useQuery('purchases', () => fetch(`http://localhost:5000/purchase/${id}`).then(res => res.json()))
@@ -16,27 +23,22 @@ const Payment = () => {
             <h4>Pay now for {id}</h4>
             <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-12 col-12">
-                    <Card variant="Light">
+                    <Card variant="Light" className='shadow p-3'>
                         <Card.Body>
                             <Card.Title>Order ID: {purchaseItems._id} </Card.Title>
-                               <h6>Product Name: {purchaseItems.itemName}</h6>
-                               <h6>Quantity: {purchaseItems.quantity}</h6>
-                               <h6>Payable Amount: {purchaseItems.amount}</h6>
+                            <h6>Product Name: {purchaseItems.itemName}</h6>
+                            <h6>Quantity: {purchaseItems.quantity}</h6>
+                            <h6>Payable Amount: {purchaseItems.amount}</h6>
                             <Card.Text>
                             </Card.Text>
                         </Card.Body>
                     </Card>
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-12 col-12">
-                    <Card variant="Light">
-                        <Card.Header>Header</Card.Header>
-                        <Card.Body>
-                            <Card.Title> Card Title </Card.Title>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the
-                                bulk of the card's content.
-                            </Card.Text>
-                        </Card.Body>
+                    <Card variant="Light" className='shadow p-3'>
+                        <Elements stripe={stripePromise}>
+                            <CheckoutForm purchaseItems={purchaseItems}/>
+                        </Elements>
                     </Card>
                 </div>
             </div>
