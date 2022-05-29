@@ -3,6 +3,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import './Header.css'
 const Header = () => {
     const [user] = useAuthState(auth);
 
@@ -10,9 +11,10 @@ const Header = () => {
         <div>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container">
-                    <a className="navbar-brand" href="#">
-                        <img src="https://i.ibb.co/P9zwWYn/logo-blue1.png" alt="logo" />
-                    </a>
+                    <Link to='/' className="nav-link active fw-bold" aria-current="page">
+                        <img className='logo' src="https://i.ibb.co/P9zwWYn/logo-blue1.png" alt="logo" />
+                    </Link>
+
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

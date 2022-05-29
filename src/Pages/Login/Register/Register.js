@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import Loading from '../../Shared/Loading/Loading';
-import useToken from '../../../hooks/useToken';
 
 
 
@@ -24,8 +23,6 @@ const Register = () => {
         await createUserWithEmailAndPassword(email, password)
         await updateProfile({ displayName: name })
     }
-    // token
-    const [token] = useToken(user || googleUser);
     let errorElement;
     if (googleUser || user) {
         navigate('/home')

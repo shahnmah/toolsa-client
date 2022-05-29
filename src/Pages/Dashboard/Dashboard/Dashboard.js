@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../../firebase.init';
-import useAdmin from '../../../hooks/useAdmin';
 // import './Dashboard.css'
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
-    // const [admin] = useAdmin(user)
     const [currentUser, setCurrentUser] = useState([])
 
     const email = user.email;

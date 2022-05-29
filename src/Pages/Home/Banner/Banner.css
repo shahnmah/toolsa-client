@@ -2,3 +2,14 @@
     background-color: rgba(197, 13, 13, 0.651);
     background-blend-mode: overlay;
 }
+.carousel-caption{
+    top: 40%;
+}
+@media only screen and (max-width: 600px){
+    .carousel-caption{
+        top: 20%;
+    }
+    .carousel-caption h5{
+       display: none;
+    }
+}
