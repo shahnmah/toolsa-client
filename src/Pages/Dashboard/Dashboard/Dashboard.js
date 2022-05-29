@@ -34,10 +34,8 @@ const Dashboard = () => {
                        {currentUser.role !== 'admin' && <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/myOrder'>My Orders</Link>}
                         {currentUser.role === 'admin' && <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/addProduct'>Add A Product</Link>}
                         {currentUser.role === 'admin' && <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/makeAdmin'>Make Admin</Link>}
-                        {currentUser.role === 'admin' && <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/manageAllOrders'>Manage All Orders</Link>}
                         {currentUser.role === 'admin' && <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/manageProducts'>Manage Products</Link>}
-
-
+                        {currentUser.role === 'admin' && <Link className="nav-link" id="review" data-toggle="pill" role="tab" aria-controls="review" aria-selected="true" to='/dashboard/manageAllOrders'>Manage All Orders</Link>}
                     </div>
                     <div className="tab-content" id="v-pills-tabContent" style={{ width: '80%' }}>
                         {/* <div className="tab-pane fade show active" id="review"></div> */}

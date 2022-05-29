@@ -20,7 +20,7 @@ const Payment = () => {
     }
     return (
         <div>
-            <h4>Pay now for {id}</h4>
+            <h4>Pay your Order</h4>
             <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                     <Card variant="Light" className='shadow p-3'>
@@ -37,7 +37,7 @@ const Payment = () => {
                 <div className="col-lg-6 col-md-6 col-sm-12 col-12">
                     <Card variant="Light" className='shadow p-3'>
                         <Elements stripe={stripePromise}>
-                            <CheckoutForm purchaseItems={purchaseItems}/>
+                            <CheckoutForm purchaseItems={purchaseItems} />
                         </Elements>
                     </Card>
                 </div>

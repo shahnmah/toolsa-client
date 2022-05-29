@@ -27,10 +27,7 @@ const Register = () => {
     // token
     const [token] = useToken(user || googleUser);
     let errorElement;
-    if (user) {
-        navigate('/login')
-    }
-    if (googleUser) {
+    if (googleUser || user) {
         navigate('/home')
     }
     if(error || googleError){

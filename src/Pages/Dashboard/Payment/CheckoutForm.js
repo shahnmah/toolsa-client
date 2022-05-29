@@ -1,5 +1,6 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
+import Loading from '../../Shared/Loading/Loading';
 
 const CheckoutForm = ({ purchaseItems }) => {
     const [displayCardError, setDisplayCardError] = useState('');
@@ -47,7 +48,6 @@ const CheckoutForm = ({ purchaseItems }) => {
             setDisplayCardError('')
         }
         setSuccess('')
-
         // confirm payment
         const { paymentIntent, error: paymentError } = await stripe.confirmCardPayment(
             clientSecret,
@@ -82,7 +82,9 @@ const CheckoutForm = ({ purchaseItems }) => {
                 body: JSON.stringify({ payment })
             })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+               console.log(data)
+            })
         }
     }
     return (

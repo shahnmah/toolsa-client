@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 
 const OrderList = ({ purchaseItem, refetch, index }) => {
-    const { paid ,itemName, amount, _id} = purchaseItem
+    const { itemName, amount, _id } = purchaseItem
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -27,8 +27,14 @@ const OrderList = ({ purchaseItem, refetch, index }) => {
             <td>{itemName}</td>
             <td>{amount}</td>
             {/* <td><button className='btn btn-success btn-sm'>Pay Now</button></td> */}
-            <td><Link to={`/dashboard/payment/${_id}`} role='button' className='btn btn-success btn-sm'>Pay Now</Link></td>
-            <td><button onClick={handleShow} className='btn btn-danger btn-sm'>CANCEL</button></td>
+            {purchaseItem.paid ?
+                <td><button className='btn btn-sm btn-info text-white'>Paid</button></td>
+                :
+                <td><Link to={`/dashboard/payment/${_id}`} role='button' className='btn btn-success btn-sm'>Pay Now</Link></td>}
+            {purchaseItem.paid ?
+                <td><button onClick={handleShow} disabled className='btn btn-danger btn-sm'>CANCEL</button></td>
+                :
+                <td><button onClick={handleShow} className='btn btn-danger btn-sm'>CANCEL</button></td>}
             <ToastContainer />
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
@@ -38,7 +44,7 @@ const OrderList = ({ purchaseItem, refetch, index }) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="danger" onClick={(e)=>handleCancel(_id)}>
+                    <Button variant="danger" onClick={(e) => handleCancel(_id)}>
                         Yes Cancel
                     </Button>
                 </Modal.Footer>
