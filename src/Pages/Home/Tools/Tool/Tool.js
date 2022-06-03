@@ -14,7 +14,7 @@ const Tool = ({ tool }) => {
                     <img style={{width:'65%'}} className='img-fluid' src={img} alt="" />
                 </div>
                 <div className='bg-light'>
-                    <h5 className='py-1'>{name}</h5>
+                    <h5 className='py-2'>{name}</h5>
                     <p>{dis}</p>
                     <h6>Price: {price} $ per unit</h6>
                     <h6>Minimum Order: {min_order} units</h6>

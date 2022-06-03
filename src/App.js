@@ -20,6 +20,7 @@ import ManageAllOrders from './Pages/Dashboard/ManageAllOrders/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/ManageProducts/ManageProducts';
 import Payment from './Pages/Dashboard/Payment/Payment';
 import Blogs from './Pages/Blogs/Blogs';
+import Shop from './Pages/Shop/Shop';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
           <Route path='manageProducts' element={<ManageProducts />} />
           <Route path='payment/:id' element={<Payment />} />
         </Route>
+        <Route path='shop' element={<Shop />} />
         <Route path='portfolio' element={<MyPortfolio />} />
         <Route path='blogs' element={<Blogs />} />
         <Route path='*' element={<NotFound />} />
