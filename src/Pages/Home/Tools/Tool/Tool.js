@@ -8,18 +8,18 @@ const Tool = ({ tool }) => {
         navigate(`/buyNow/${id}`)
     }
     return (
-        <div className='col-lg-4 col-md-4 col-sm-6 col-12 border rounded'>
-            <div className=''>
-                <div>
-                    <img className='img-fluid' src={img} alt="" />
+        <div className='col-lg-4 col-md-4 col-sm-6 col-12 border rounded text-center p-0'>
+            <div>
+                <div style={{backgroundColor:'rgba(51, 102, 204,.1)'}}>
+                    <img style={{width:'65%'}} className='img-fluid' src={img} alt="" />
                 </div>
-                <div>
+                <div className='bg-light'>
                     <h5 className='py-1'>{name}</h5>
                     <p>{dis}</p>
                     <h6>Price: {price} $ per unit</h6>
                     <h6>Minimum Order: {min_order} units</h6>
                     <h6>Available Quantity: {available}</h6>
-                    <button onClick={() => navigateToBuy(_id)} className='btn btn-primary px-4 my-2'>Buy Now</button>
+                    <button style={{backgroundColor:'#3366cc'}} onClick={() => navigateToBuy(_id)} className='btn px-4 mt-2 text-white fw-bold w-100'>Buy Now</button>
                 </div>
             </div>
         </div>
