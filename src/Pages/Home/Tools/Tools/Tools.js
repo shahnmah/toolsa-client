@@ -12,7 +12,7 @@ const Tools = () => {
         <div>
             <div className="container">
                 <h2>Products</h2>
-                <div className="row g-5">
+                <div className="row g-4">
                     {
                         tools.map(tool=> <Tool key={tool._id} tool={tool}/>)
                     }

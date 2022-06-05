@@ -10,7 +10,7 @@ const Review = ({review}) => {
             </div>
             <p className='mt-5'>{rating} Star</p>
             <h4>{name}</h4>
-            <div className='bg-light p-2'>
+            <div style={{backgroundColor:'rgba(51, 102, 204, 0.1)'}} className='p-2'>
                 <p>{customer_review}</p>
             </div>
         </div>
