@@ -8,14 +8,14 @@ const Tool = ({ tool }) => {
         navigate(`/buyNow/${id}`)
     }
     return (
-        <div className='col-lg-4 col-md-4 col-sm-6 col-12 border rounded text-center p-0'>
+        <div className='col-lg-4 col-md-4 col-sm-6 col-12 rounded text-center'>
             <div>
                 <div style={{backgroundColor:'rgba(51, 102, 204,.1)'}}>
                     <img style={{width:'65%'}} className='img-fluid' src={img} alt="" />
                 </div>
                 <div className='bg-light'>
                     <h5 className='py-2'>{name}</h5>
-                    <p>{dis}</p>
+                    <p className='px-2'>{dis}</p>
                     <h6>Price: {price} $ per unit</h6>
                     <h6>Minimum Order: {min_order} units</h6>
                     <h6>Available Quantity: {available}</h6>

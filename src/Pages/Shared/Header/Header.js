@@ -23,18 +23,12 @@ const Header = () => {
                             <li className="nav-item">
                                 <Link to='/' className="nav-link active fw-bold" aria-current="page">Home</Link>
                             </li>
-                            {/* <li className="nav-item">
-                                <Link to='/portfolio' className="nav-link active fw-bold">My Portfolio</Link>
-                            </li> */}
                             <li className="nav-item">
                                 <Link to='/shop' className="nav-link active fw-bold">Shop</Link>
                             </li>
                             {
                                 user && <Link to='/dashboard' className="nav-link active fw-bold">Dashboard</Link>
                             }
-                            {/* <li className="nav-item">
-                                <Link to='/blogs' className="nav-link active fw-bold">Blogs</Link>
-                            </li> */}
                             <li className="nav-item">
                                 {
                                     user ? <button style={{ backgroundColor: '#3366cc' }} className='btn btn-link text-white text-decoration-none' onClick={() => signOut(auth)}>Sign Out</button>

@@ -7,8 +7,8 @@ import './BusinessSummary.css'
 
 const BusinessSummary = () => {
     return (
-        <div className='counter'>
-            <div className="container text-center py-5 my-5 text-white">
+        <div className='counter my-5'>
+            <div className="container text-center py-5 text-white">
                 <div className="row">
                     <div className="col-lg-3 col-md-3 col-md-6 col-12">
                         <FontAwesomeIcon className='fs-2 mb-2' icon={faUsers}></FontAwesomeIcon>
